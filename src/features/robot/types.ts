@@ -11,6 +11,6 @@ export interface RobotStructure extends RobotData {
   id: string;
 }
 
-export interface MotosRepository {
+export interface RobotsRepository {
   getRobots: () => Promise<RobotStructure[]>;
 }
