@@ -1,4 +1,4 @@
-import Robot from "../model/Robot";
+import Robot from "../model/Robot.js";
 import type { RobotStructure, RobotsRepository } from "../types";
 
 class RobotsMongooseRepository implements RobotsRepository {
