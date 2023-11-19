@@ -9,6 +9,7 @@ describe("Given a RobotsController's getRobots method", () => {
 
     const robotsRepository: RobotsRepository = {
       getRobots: jest.fn().mockResolvedValue(robots),
+      createRobot: jest.fn(),
     };
 
     const robotsController = new RobotsController(robotsRepository);
