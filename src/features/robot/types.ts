@@ -13,4 +13,11 @@ export interface RobotStructure extends RobotData {
 
 export interface RobotsRepository {
   getRobots: () => Promise<RobotStructure[]>;
+  createRobot: (robot: RobotData) => Promise<RobotStructure>;
 }
+
+export type RobotCreateRequest = Request<
+  Record<string, unknown>,
+  Record<string, unknown>,
+  RobotData
+>;
