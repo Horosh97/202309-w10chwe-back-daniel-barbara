@@ -7,11 +7,7 @@ import robotsRouter from "../features/robot/router/robotsRouter.js";
 
 app.use(morgan("dev"));
 
-app.use(
-  cors({
-    origin: "*",
-  }),
-);
+app.use(cors({ origin: "*" }));
 
 app.use("/robots", robotsRouter);
 
