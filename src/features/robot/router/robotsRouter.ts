@@ -8,5 +8,6 @@ const robotsRepository = new RobotsMongooseRepository();
 const robotsController = new RobotsController(robotsRepository);
 
 robotsRouter.get("/", robotsController.getRobots);
+robotsRouter.post("/", robotsController.createRobot);
 
 export default robotsRouter;
