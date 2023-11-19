@@ -7,10 +7,14 @@ import robotsRouter from "../features/robot/router/robotsRouter.js";
 
 app.use(morgan("dev"));
 
+app.use(
+  cors({
+    origin: "*",
+  }),
+);
+
 app.use("/robots", robotsRouter);
 
 app.use("/", pingRouter);
-
-app.use(cors());
 
 app.use(express.json());
