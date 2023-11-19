@@ -11,6 +11,6 @@ app.use("/robots", robotsRouter);
 
 app.use("/", pingRouter);
 
-app.use(cors);
+app.use(cors());
 
 app.use(express.json());
