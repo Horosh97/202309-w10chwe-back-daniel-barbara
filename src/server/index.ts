@@ -5,6 +5,8 @@ import cors from "cors";
 import pingRouter from "../features/ping/router/pingRouter.js";
 import robotsRouter from "../features/robot/router/robotsRouter.js";
 
+app.use(express.json());
+
 app.use(morgan("dev"));
 
 app.use(cors({ origin: "*" }));
@@ -12,5 +14,3 @@ app.use(cors({ origin: "*" }));
 app.use("/robots", robotsRouter);
 
 app.use("/", pingRouter);
-
-app.use(express.json());

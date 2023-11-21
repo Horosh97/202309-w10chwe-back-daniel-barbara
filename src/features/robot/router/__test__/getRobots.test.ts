@@ -4,7 +4,7 @@ import request from "supertest";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { connectToDatabase } from "../../../../database/index";
 import mongoose from "mongoose";
-import Robot from "../../model/Robot.js";
+import Robot from "../../model/Robot";
 import robotsMocks from "../../mocks/robotsMocks";
 import type { RobotStructure } from "../../types";
 
