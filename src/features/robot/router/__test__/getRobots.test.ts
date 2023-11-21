@@ -4,7 +4,7 @@ import request from "supertest";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import { connectToDatabase } from "../../../../database/index";
 import mongoose from "mongoose";
-import Robot from "../../model/Robot.js";
+import Robot from "../../model/Robot";
 import robotsMocks from "../../mocks/robotsMocks";
 import type { RobotStructure } from "../../types";
 
@@ -27,7 +27,8 @@ describe("Given a GET /robots endpoint", () => {
       const expectedStatusCode = 200;
       const path = "/robots";
 
-      await Robot.create(robotsMocks);
+      await Robot.create(robotsMocks[0]);
+      await Robot.create(robotsMocks[1]);
 
       const response = await request(app).get(path).expect(expectedStatusCode);
 

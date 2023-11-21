@@ -8,7 +8,7 @@ export interface RobotData {
 }
 
 export interface RobotStructure extends RobotData {
-  id: string;
+  _id: string;
 }
 
 export interface RobotsRepository {

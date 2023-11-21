@@ -62,7 +62,7 @@ describe("Given a robotsControllers's method createRobot", () => {
       expect(res.status).toHaveBeenCalledWith(expectedStatusCode);
     });
 
-    test("Then it should call its method json with a 'Error creating the new robot' error", async () => {
+    test("Then it should call its method json with an 'Error creating the new robot' error", async () => {
       const expectedErrorMessage = "Error creating the new robot";
 
       await robotsController.createRobot(
@@ -70,7 +70,9 @@ describe("Given a robotsControllers's method createRobot", () => {
         res as Response,
       );
 
-      expect(res.json).toHaveBeenCalledWith({ error: expectedErrorMessage });
+      expect(res.json).toHaveBeenCalledWith({
+        error: expectedErrorMessage,
+      });
     });
   });
 });
