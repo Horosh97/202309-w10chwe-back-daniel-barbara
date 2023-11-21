@@ -27,7 +27,8 @@ describe("Given a GET /robots endpoint", () => {
       const expectedStatusCode = 200;
       const path = "/robots";
 
-      await Robot.create(robotsMocks);
+      await Robot.create(robotsMocks[0]);
+      await Robot.create(robotsMocks[1]);
 
       const response = await request(app).get(path).expect(expectedStatusCode);
 

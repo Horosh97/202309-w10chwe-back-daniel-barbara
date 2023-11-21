@@ -17,8 +17,10 @@ class RobotsController {
     try {
       const newRobot = await this.robotsRepository.createRobot(robotData);
       res.status(201).json({ robot: newRobot });
-    } catch {
-      res.status(500).json({ error: "Error creating the new robot" });
+    } catch (error) {
+      res.status(500).json({
+        error: "Error creating the new robot",
+      });
     }
   };
 }

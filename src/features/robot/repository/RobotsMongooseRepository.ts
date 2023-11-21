@@ -11,6 +11,7 @@ class RobotsMongooseRepository implements RobotsRepository {
   public async createRobot(robot: RobotData): Promise<RobotStructure> {
     try {
       const newRobot = await Robot.create(robot);
+
       return newRobot;
     } catch (error) {
       throw new Error(
