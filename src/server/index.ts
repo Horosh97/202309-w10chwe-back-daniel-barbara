@@ -5,6 +5,7 @@ import cors from "cors";
 import pingRouter from "../features/ping/router/pingRouter.js";
 import robotsRouter from "../features/robot/router/robotsRouter.js";
 import usersRouter from "../features/users/router/usersRouter.js";
+import { notFoundError } from "./middlewares/errors/notFound.js";
 
 app.use(express.json());
 
@@ -17,3 +18,5 @@ app.use("/robots", robotsRouter);
 app.use("/users", usersRouter);
 
 app.use("/", pingRouter);
+
+app.use(notFoundError);
